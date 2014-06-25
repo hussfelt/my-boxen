@@ -6,7 +6,7 @@ class people::hussfelt {
     include iterm2::stable
     include onepassword
     include skype
-    include spotify
+#    include spotify
     include sublime_text_2
     include things
     include phpstorm
