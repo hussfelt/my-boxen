@@ -16,19 +16,19 @@ class people::hussfelt {
     # osx settings
     include osx::dock::autohide
     include osx::dock::dim_hidden_apps
+}
 
-    $dotfiles = "${boxen::config::srcdir}/dotfiles"
+$dotfiles = "/Users/${::boxen_user}/src/dotfiles"
 
-    repository { $dotfiles:
-      source => "${::github_login}/dotfiles",
-      require => File[${boxen::config::srcdir}],
-    }
+repository { $dotfiles:
+  source => "${::github_login}/dotfiles",
+  require => File[/Users/${::boxen_user}/src}],
+}
 
-    exec { "install dotfiles":
-      provider => shell,
-      command  => "./script/install",
-      cwd      => $dotfiles,
-      creates  => "${home}/.zshrc",
-      require  => Repository[$dotfiles],
-    }
+exec { "install dotfiles":
+  provider => shell,
+  command  => "./script/install",
+  cwd      => $dotfiles,
+  creates  => "${home}/.zshrc",
+  require  => Repository[$dotfiles],
 }
