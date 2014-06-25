@@ -22,7 +22,7 @@ $dotfiles = "/Users/${::boxen_user}/src/dotfiles"
 
 repository { $dotfiles:
   source => "${::github_login}/dotfiles",
-  require => File[/Users/${::boxen_user}/src}],
+  require => File["/Users/${::boxen_user}/src"],
 }
 
 exec { "install dotfiles":
