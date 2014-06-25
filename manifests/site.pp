@@ -88,30 +88,30 @@ node default {
   include pcre
   include wget
 
-  include php::5_4
+  #include php::5_4
   include php::5_5
-  include php::fpm::5_4_29
+  #include php::fpm::5_4_29
   include php::fpm::5_5_13
 
   # replace system php with this one
   # comment if don't need it
   class { 'php::global':
-        version => '5.4.29'
+        version => '5.5.13'
   }
 
   # install the php-intl extention
-  php::extension::intl { "intl for 5.4.29":
-    php     => '5.4.29'
+  php::extension::intl { "intl for 5.5.13":
+    php     => '5.5.13'
   }
 
   # install the php-xdebug extention
-  php::extension::xdebug { "xdebug for 5.4.29":
-    php     => '5.4.29'
+  php::extension::xdebug { "xdebug for 5.5.13":
+    php     => '5.5.13'
   }
 
   # install the php-xdebug extention
-  php::extension::mcrypt { "mcrypt for 5.4.29":
-    php     => '5.4.29'
+  php::extension::mcrypt { "mcrypt for 5.5.13":
+    php     => '5.5.13'
   }
 
   # Fix OSX recovery message
