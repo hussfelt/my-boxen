@@ -76,7 +76,11 @@ node default {
   ruby::version { '2.1.1': }
   ruby::version { '2.1.2': }
 
-  #php requirements
+  # we use python for fabric
+  include xquartz
+  include python
+
+  # php requirements
   include autoconf
   include libpng
   include libtool
@@ -111,7 +115,7 @@ node default {
   }
 
   # Fix OSX recovery message
-  osx::recovery_message { 'If this Mac is found, please call +46708321222 or email henrik@hussfelt.net': }
+  osx::recovery_message { 'If this Mac is found, please call +46708321222 or email henrik@hussfelt.net.': }
 
   # common, useful packages
   package {
