@@ -76,6 +76,43 @@ node default {
   ruby::version { '2.1.1': }
   ruby::version { '2.1.2': }
 
+  #php requirements
+  include autoconf
+  include libpng
+  include libtool
+  include pkgconfig
+  include pcre
+  include wget
+
+  include php::5_4
+  include php::5_5
+  include php::fpm::5_4_29
+  include php::fpm::5_5_13
+
+  # replace system php with this one
+  # comment if don't need it
+  class { 'php::global':
+        version => '5.4.29'
+  }
+
+  # install the php-intl extention
+  php::extension::intl { "intl for 5.4.29":
+    php     => '5.4.29'
+  }
+
+  # install the php-xdebug extention
+  php::extension::xdebug { "xdebug for 5.4.29":
+    php     => '5.4.29'
+  }
+
+  # install the php-xdebug extention
+  php::extension::mcrypt { "mcrypt for 5.4.29":
+    php     => '5.4.29'
+  }
+
+  # Fix OSX recovery message
+  osx::recovery_message { 'If this Mac is found, please call +46708321222 or email henrik@hussfelt.net': }
+
   # common, useful packages
   package {
     [
