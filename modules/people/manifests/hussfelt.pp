@@ -14,15 +14,21 @@ class people::hussfelt {
     include vlc
 
     # osx settings
-    include osx::global::enable_keyboard_control_access
-    include osx::global::expand_print_dialog
-    include osx::global::expand_save_dialog
-    include osx::dock::2d
     include osx::dock::autohide
-    include osx::dock::clear_dock
     include osx::dock::dim_hidden_apps
-    include osx::finder::empty_trash_securely
-    include osx::finder::unhide_library
-    include osx::disable_app_quarantine
-    include osx::no_network_dsstores
+
+    $dotfiles = "${boxen::config::srcdir}/dotfiles"
+
+    repository { $dotfiles:
+      source => "${::github_login}/dotfiles",
+      require => File[${boxen::config::srcdir}],
+    }
+
+    exec { "install dotfiles":
+      provider => shell,
+      command  => "./script/install",
+      cwd      => $dotfiles,
+      creates  => "${home}/.zshrc",
+      require  => Repository[$dotfiles],
+    }
 }
