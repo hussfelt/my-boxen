@@ -126,7 +126,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-php
   specs:
-    php (1.2.3)
+    php (1.2.4)
 
 GITHUBTARBALL
   remote: boxen/puppet-phpstorm
@@ -267,7 +267,7 @@ DEPENDENCIES
   osx (= 2.7.0)
   pcre (= 1.0.0)
   phantomjs (= 2.3.0)
-  php (= 1.2.3)
+  php (= 1.2.4)
   phpstorm (= 1.0.4)
   pkgconfig (= 1.0.0)
   pkgconfig (= 1.0.0)

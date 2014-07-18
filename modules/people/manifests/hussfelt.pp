@@ -6,6 +6,8 @@ class people::hussfelt {
     include iterm2::stable
     include onepassword
     include skype
+    include chrome
+    include firefox
 #    include spotify
     include sublime_text_2
     include things
@@ -13,22 +15,26 @@ class people::hussfelt {
     include transmission
     include vlc
 
+    include oh-my-zsh
+
     # osx settings
     include osx::dock::autohide
     include osx::dock::dim_hidden_apps
+
+    $dotfiles = "/Users/hussfelt/src/dotfiles"
+
+    repository { $dotfiles:
+      source => "${::github_login}/dotfiles",
+      require => File["/Users/hussfelt/src/"],
+    }
+
+    exec { "install dotfiles":
+      provider => shell,
+      command  => "./script/install",
+      cwd      => $dotfiles,
+      creates  => "${home}/.zshrc",
+      require  => Repository[$dotfiles],
+    }
+
 }
 
-$dotfiles = "/Users/${::boxen_user}/src/dotfiles"
-
-repository { $dotfiles:
-  source => "${::github_login}/dotfiles",
-  require => File["/Users/${::boxen_user}/src"],
-}
-
-exec { "install dotfiles":
-  provider => shell,
-  command  => "./script/install",
-  cwd      => $dotfiles,
-  creates  => "${home}/.zshrc",
-  require  => Repository[$dotfiles],
-}
