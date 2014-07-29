@@ -12,6 +12,7 @@ class people::hussfelt {
 #    include charles
     include sublime_text_2
     include things
+    include tower
     include phpstorm
     include transmission
     include vlc
