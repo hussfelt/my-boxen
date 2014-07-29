@@ -61,6 +61,7 @@ github "xquartz",     "1.1.1"
 # https://github.com/boxen.
 github "autoconf",   "1.0.0"
 github "chrome",      "1.1.2"
+github "charles",      "1.0.4"
 github "dropbox",     "1.2.0"
 github "firefox",     "1.2.1"
 github "github_for_mac", "1.0.3"

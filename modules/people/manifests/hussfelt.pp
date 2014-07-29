@@ -9,6 +9,7 @@ class people::hussfelt {
     include chrome
     include firefox
 #    include spotify
+#    include charles
     include sublime_text_2
     include things
     include phpstorm
@@ -36,5 +37,9 @@ class people::hussfelt {
       require  => Repository[$dotfiles],
     }
 
+#   class {'charles::license':
+#     license_name => 'Your name',
+#     license_key  => '7ad6c7a6c87...',
+#   }
 }
 
