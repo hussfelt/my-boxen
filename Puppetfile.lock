@@ -9,6 +9,11 @@ GITHUBTARBALL
     boxen (3.6.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-charles
+  specs:
+    charles (1.0.4)
+
+GITHUBTARBALL
   remote: boxen/puppet-chrome
   specs:
     chrome (1.1.2)
@@ -194,6 +199,11 @@ GITHUBTARBALL
     things (1.0.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-tower
+  specs:
+    tower (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-transmission
   specs:
     transmission (1.1.0)
@@ -241,6 +251,7 @@ GITHUBTARBALL
 DEPENDENCIES
   autoconf (= 1.0.0)
   boxen (= 3.6.1)
+  charles (= 1.0.4)
   chrome (= 1.1.2)
   dnsmasq (= 1.0.1)
   dropbox (= 1.2.0)
@@ -283,6 +294,7 @@ DEPENDENCIES
   sudo (= 1.0.0)
   sysctl (= 1.0.1)
   things (= 1.0.1)
+  tower (= 1.0.0)
   transmission (= 1.1.0)
   vlc (= 1.1.0)
   wget (= 1.0.1)
