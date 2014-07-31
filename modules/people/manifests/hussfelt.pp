@@ -3,6 +3,7 @@ class people::hussfelt {
     # apps
     include dropbox
     include github_for_mac
+#    include git-flow
     include iterm2::stable
     include onepassword
     include skype

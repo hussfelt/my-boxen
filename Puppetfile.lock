@@ -1,4 +1,9 @@
 GITHUBTARBALL
+  remote: b00giZm/puppet-git-flow
+  specs:
+    git-flow (0.2.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-autoconf
   specs:
     autoconf (1.0.0)
@@ -259,6 +264,7 @@ DEPENDENCIES
   foreman (= 1.2.0)
   gcc (= 2.0.101)
   git (= 2.4.0)
+  git-flow (= 0.2.0)
   github_for_mac (= 1.0.3)
   go (= 1.1.0)
   homebrew (= 1.9.3)
