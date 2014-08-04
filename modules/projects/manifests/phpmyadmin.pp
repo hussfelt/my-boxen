@@ -6,7 +6,7 @@ include mysql
         nginx           => 'projects/shared/phpmyadmin.conf',
         source          => 'phpmyadmin/phpmyadmin',
         server_name     => 'phpmyadmin.dev',
-		php				=> '5.4.17'
+		php				=> '5.4.29'
       }
 
 }
